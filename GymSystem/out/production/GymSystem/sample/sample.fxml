@@ -1,0 +1,865 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0"
+         prefWidth="940.0" style="-fx-background-color: black;" tabClosingPolicy="UNAVAILABLE"
+         xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <tabs>
+        <Tab text="Ana Sayfa">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <ImageView fitHeight="673.0" fitWidth="944.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@img/back.jpg"/>
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="420.0" fitWidth="482.0" layoutX="157.0" layoutY="151.0" opacity="0.5"
+                                   pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@img/gym2.png"/>
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="195.0" fitWidth="452.0" layoutX="172.0" layoutY="20.0"
+                                   nodeOrientation="INHERIT" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@img/logo.png"/>
+                            </image>
+                        </ImageView>
+                        <Label fx:id="tarih" layoutX="824.0" layoutY="531.0" prefHeight="34.0" prefWidth="116.0"
+                               style="-fx-background-color: black;" text="Label" textAlignment="CENTER"
+                               textFill="#ede3e3">
+                            <font>
+                                <Font name="Dubai Medium" size="18.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab text="Personel">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="354.0" prefWidth="510.0">
+                    <children>
+                        <ImageView fitHeight="673.0" fitWidth="944.0" opacity="0.7" pickOnBounds="true"
+                                   preserveRatio="true">
+                            <image>
+                                <Image url="@img/back.jpg"/>
+                            </image>
+                        </ImageView>
+                        <TableView fx:id="Ptable" layoutX="170.0" layoutY="227.0" prefHeight="338.0" prefWidth="604.0"
+                                   style="-fx-background-color: #A9A9A9; -fx-border-radius: 30;">
+                            <columns>
+                                <TableColumn fx:id="Pid" prefWidth="55.999969482421875"
+                                             style="-fx-background-color: #5D88C6;" text="Id"/>
+                                <TableColumn fx:id="Pad" prefWidth="85.20001220703125"
+                                             style="-fx-background-color: #0565B3;" text="Ad"/>
+                                <TableColumn fx:id="Psoyad" prefWidth="85.20001220703125"
+                                             style="-fx-background-color: #5D88C6;" text="Soyad"/>
+                                <TableColumn fx:id="Ptel" prefWidth="94.4000244140625"
+                                             style="-fx-background-color: #0565B3;" text="Telefon"/>
+                                <TableColumn fx:id="Ptarih" prefWidth="90.4000244140625"
+                                             style="-fx-background-color: #5D88C6;" text="Başlama Tarihi"/>
+                                <TableColumn fx:id="Pmaas" prefWidth="79.20001220703125"
+                                             style="-fx-background-color: #0565B3;" text="Maaş"/>
+                                <TableColumn fx:id="Ppozisyon" prefWidth="107.5999755859375"
+                                             style="-fx-background-color: #5D88C6;" text="Pozisyon"/>
+                            </columns>
+                            <opaqueInsets>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                            </opaqueInsets>
+                            <cursor>
+                                <Cursor fx:constant="MOVE"/>
+                            </cursor>
+                        </TableView>
+                        <VBox layoutX="267.0" prefHeight="114.0" prefWidth="410.0"
+                              style="-fx-min-height: 100; -fx-min-width: 100;">
+                            <children>
+                                <TextField fx:id="araName" promptText="Personel Ad"
+                                           style="-fx-padding: 10 10 10 10; -fx-margin: 10 10 100 10; -fx-background-color: #D3D3D3; -fx-text-inner-color: white;">
+                                    <font>
+                                        <Font name="Arial" size="16.0"/>
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0"/>
+                                    </VBox.margin>
+                                </TextField>
+                                <TextField fx:id="araSurname" promptText="Personel Soyad"
+                                           style="-fx-padding: 10 10 10 10; -fx-text-inner-color: white; -fx-background-color: #D3D3D3;">
+                                    <font>
+                                        <Font name="Arial" size="16.0"/>
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0"/>
+                                    </VBox.margin>
+                                </TextField>
+                                <ComboBox fx:id="ppozisyon" prefHeight="26.0" prefWidth="414.0" promptText="Pozisyon">
+                                    <padding>
+                                        <Insets bottom="4.0" top="3.0"/>
+                                    </padding>
+                                </ComboBox>
+                            </children>
+                            <opaqueInsets>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                            </opaqueInsets>
+                            <padding>
+                                <Insets top="20.0"/>
+                            </padding>
+                        </VBox>
+                        <Button fx:id="Pbtn" layoutX="597.0" layoutY="174.0" mnemonicParsing="false" prefHeight="30.0"
+                                prefWidth="79.0" style="-fx-background-color: #007BFF; -fx-background-radius: 50;"
+                                text="Listele">
+                            <font>
+                                <Font name="Arial Bold" size="13.0"/>
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="DEFAULT"/>
+                            </cursor>
+                        </Button>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab text="Personel Kayıt">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <ImageView fitHeight="673.0" fitWidth="944.0" opacity="0.7" pickOnBounds="true"
+                                   preserveRatio="true">
+                            <image>
+                                <Image url="@img/back.jpg"/>
+                            </image>
+                        </ImageView>
+                        <VBox layoutX="215.0" layoutY="150.0" prefHeight="263.0" prefWidth="410.0"
+                              style="-fx-min-height: 100; -fx-min-width: 100;">
+                            <children>
+                                <TextField fx:id="pkad" promptText="Ad"
+                                           style="-fx-padding: 10 10 10 10; -fx-margin: 10 10 100 10; -fx-prompt-text-fill: black;">
+                                    <VBox.margin>
+                                        <Insets bottom="5.0"/>
+                                    </VBox.margin>
+                                </TextField>
+                                <TextField fx:id="pksoyad" promptText="Soyad"
+                                           style="-fx-padding: 10 10 10 10; -fx-prompt-text-fill: black;">
+                                    <VBox.margin>
+                                        <Insets bottom="5.0"/>
+                                    </VBox.margin>
+                                </TextField>
+                                <TextField fx:id="pktel" promptText="Telefon"
+                                           style="-fx-padding: 10 10 10 10; -fx-margin: 10 10 100 10; -fx-prompt-text-fill: black;">
+                                    <VBox.margin>
+                                        <Insets bottom="5.0"/>
+                                    </VBox.margin>
+                                </TextField>
+                                <TextField fx:id="pkmaas" promptText="Maaş"
+                                           style="-fx-padding: 10 10 10 10; -fx-margin: 10 10 100 10; -fx-prompt-text-fill: black;">
+                                    <VBox.margin>
+                                        <Insets bottom="5.0"/>
+                                    </VBox.margin>
+                                </TextField>
+                                <ComboBox fx:id="comboPozisyon" prefHeight="26.0" prefWidth="411.0"
+                                          promptText="Pozisyon"
+                                          style="-fx-background-color: white; -fx-prompt-text-fill: red;">
+                                    <VBox.margin>
+                                        <Insets bottom="5.0"/>
+                                    </VBox.margin>
+                                    <padding>
+                                        <Insets bottom="4.0" top="3.0"/>
+                                    </padding>
+                                </ComboBox>
+                                <DatePicker fx:id="pktarih" prefHeight="26.0" prefWidth="419.0"
+                                            promptText="Başlama Tarihi"
+                                            style="-fx-background-color: white; -fx-prompt-text-fill: bllack;">
+                                    <VBox.margin>
+                                        <Insets bottom="5.0"/>
+                                    </VBox.margin>
+                                    <padding>
+                                        <Insets bottom="5.0" top="5.0"/>
+                                    </padding>
+                                </DatePicker>
+                            </children>
+                            <opaqueInsets>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                            </opaqueInsets>
+                        </VBox>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="214.0" layoutY="87.0"
+                               prefHeight="34.0" prefWidth="411.0" text="Personel Kayıt Sayfası" textAlignment="CENTER"
+                               textFill="#000000b0" textOverrun="CENTER_ELLIPSIS">
+                            <opaqueInsets>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                            </opaqueInsets>
+                            <font>
+                                <Font name="Arial Bold" size="29.0"/>
+                            </font>
+                        </Label>
+                        <Button fx:id="pkaydet" layoutX="214.0" layoutY="449.0" mnemonicParsing="false"
+                                prefHeight="30.0" prefWidth="412.0"
+                                style="-fx-background-color: #007BFF; -fx-background-radius: 50;" text="Kaydet">
+                            <font>
+                                <Font name="Arial Bold" size="16.0"/>
+                            </font>
+                        </Button>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab text="Personel Güncelle">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <ImageView fitHeight="673.0" fitWidth="944.0" opacity="0.7" pickOnBounds="true"
+                                   preserveRatio="true">
+                            <image>
+                                <Image url="@img/back.jpg"/>
+                            </image>
+                        </ImageView>
+                        <VBox layoutX="215.0" layoutY="150.0" prefHeight="263.0" prefWidth="410.0"
+                              style="-fx-min-height: 100; -fx-min-width: 100;">
+                            <children>
+                                <TextField id="pgid" fx:id="pgid" promptText="ID"
+                                           style="-fx-padding: 10 10 10 10; -fx-margin: 10 10 100 10; -fx-prompt-text-fill: black;">
+                                    <VBox.margin>
+                                        <Insets bottom="5.0"/>
+                                    </VBox.margin>
+                                </TextField>
+                                <TextField id="pgad" fx:id="pgad" promptText="Ad"
+                                           style="-fx-padding: 10 10 10 10; -fx-margin: 10 10 100 10; -fx-prompt-text-fill: black;">
+                                    <VBox.margin>
+                                        <Insets bottom="5.0"/>
+                                    </VBox.margin>
+                                </TextField>
+                                <TextField fx:id="pgsoyad" promptText="Soyad"
+                                           style="-fx-padding: 10 10 10 10; -fx-prompt-text-fill: black;">
+                                    <VBox.margin>
+                                        <Insets bottom="5.0"/>
+                                    </VBox.margin>
+                                </TextField>
+                                <TextField fx:id="pgtel" promptText="Telefon"
+                                           style="-fx-padding: 10 10 10 10; -fx-margin: 10 10 100 10; -fx-prompt-text-fill: black;">
+                                    <VBox.margin>
+                                        <Insets bottom="5.0"/>
+                                    </VBox.margin>
+                                </TextField>
+                                <TextField fx:id="pgmaas" promptText="Maaş"
+                                           style="-fx-padding: 10 10 10 10; -fx-margin: 10 10 100 10; -fx-prompt-text-fill: black;">
+                                    <VBox.margin>
+                                        <Insets bottom="5.0"/>
+                                    </VBox.margin>
+                                </TextField>
+                                <ComboBox fx:id="pgpozisyon" prefHeight="26.0" prefWidth="411.0" promptText="Pozisyon"
+                                          style="-fx-background-color: white;">
+                                    <padding>
+                                        <Insets bottom="4.0" top="3.0"/>
+                                    </padding>
+                                    <VBox.margin>
+                                        <Insets bottom="5.0"/>
+                                    </VBox.margin>
+                                </ComboBox>
+                                <DatePicker fx:id="pgtarih" prefHeight="26.0" prefWidth="419.0"
+                                            promptText="Başlama Tarihi"
+                                            style="-fx-background-color: white; -fx-prompt-text-fill: black;">
+                                    <padding>
+                                        <Insets bottom="5.0" top="5.0"/>
+                                    </padding>
+                                    <VBox.margin>
+                                        <Insets bottom="5.0"/>
+                                    </VBox.margin>
+                                </DatePicker>
+                            </children>
+                            <opaqueInsets>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                            </opaqueInsets>
+                        </VBox>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="214.0" layoutY="87.0"
+                               prefHeight="34.0" prefWidth="411.0" text="Personel Güncelleme Sayfası"
+                               textAlignment="CENTER" textFill="#000000b0" textOverrun="CENTER_ELLIPSIS">
+                            <opaqueInsets>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                            </opaqueInsets>
+                            <font>
+                                <Font name="Arial Bold" size="29.0"/>
+                            </font>
+                        </Label>
+                        <Button fx:id="pgbtn" layoutX="215.0" layoutY="462.0" mnemonicParsing="false" prefHeight="30.0"
+                                prefWidth="412.0" style="-fx-background-color: #007BFF; -fx-background-radius: 50;"
+                                text="Güncelle">
+                            <font>
+                                <Font name="Arial Bold" size="16.0"/>
+                            </font>
+                        </Button>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab text="Personel Sil">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <ImageView fitHeight="673.0" fitWidth="944.0" opacity="0.7" pickOnBounds="true"
+                                   preserveRatio="true">
+                            <image>
+                                <Image url="@img/back.jpg"/>
+                            </image>
+                        </ImageView>
+                        <TextField fx:id="silp" layoutX="284.0" layoutY="225.0" prefHeight="52.0" prefWidth="273.0">
+                            <font>
+                                <Font name="Arial" size="16.0"/>
+                            </font>
+                        </TextField>
+                        <Label alignment="CENTER" layoutX="283.0" layoutY="152.0" lineSpacing="100.0" prefHeight="50.0"
+                               prefWidth="274.0" style="-fx-background-color: f2f2f2;"
+                               text="Silinecek personelin ID bilgisini giriniz.">
+                            <font>
+                                <Font name="Arial" size="14.0"/>
+                            </font>
+                        </Label>
+                        <Label fx:id="siladp" layoutX="284.0" layoutY="346.0" prefHeight="29.0" prefWidth="270.0">
+                            <padding>
+                                <Insets bottom="2.0" left="5.0" right="2.0" top="2.0"/>
+                            </padding>
+                            <font>
+                                <Font name="Arial" size="15.0"/>
+                            </font>
+                        </Label>
+                        <Label fx:id="silsoyadp" layoutX="284.0" layoutY="383.0" prefHeight="29.0" prefWidth="270.0">
+                            <padding>
+                                <Insets bottom="2.0" left="5.0" right="2.0" top="2.0"/>
+                            </padding>
+                            <font>
+                                <Font name="Arial" size="15.0"/>
+                            </font>
+                        </Label>
+                        <Button fx:id="silpbtn" layoutX="460.0" layoutY="486.0" mnemonicParsing="false"
+                                prefHeight="30.0" prefWidth="97.0"
+                                style="-fx-background-color: #DC3545; -fx-background-radius: 50;" text="Sil">
+                            <font>
+                                <Font name="Arial Bold" size="15.0"/>
+                            </font>
+                        </Button>
+                        <Button fx:id="kontrolp" layoutX="284.0" layoutY="486.0" mnemonicParsing="false"
+                                prefHeight="30.0" prefWidth="97.0"
+                                style="-fx-background-color: #007BFF; -fx-background-radius: 50;" text="Kontrol Et">
+                            <font>
+                                <Font name="Arial Bold" size="15.0"/>
+                            </font>
+                        </Button>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab style=": 1;" text="Müşteri">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="354.0" prefWidth="510.0">
+                    <children>
+                        <ImageView fitHeight="673.0" fitWidth="944.0" opacity="0.7" pickOnBounds="true"
+                                   preserveRatio="true">
+                            <image>
+                                <Image url="@img/back.jpg"/>
+                            </image>
+                        </ImageView>
+                        <TableView fx:id="tableM" layoutX="135.0" layoutY="227.0" prefHeight="338.0" prefWidth="670.0"
+                                   style="-fx-background-color: #A9A9A9; -fx-border-radius: 30;">
+                            <columns>
+                                <TableColumn fx:id="tableid" prefWidth="49.600006103515625"
+                                             style="-fx-background-color: #5D88C6;" text="Id"/>
+                                <TableColumn fx:id="tablead" prefWidth="94.39997863769531"
+                                             style="-fx-background-color: #0565B3;" text="Ad"/>
+                                <TableColumn fx:id="tablesoyad" prefWidth="92.800048828125"
+                                             style="-fx-background-color: #5D88C6;" text="Soyad"/>
+                                <TableColumn fx:id="tabletel" prefWidth="79.20001220703125"
+                                             style="-fx-background-color: #0565B3;" text="Telefon"/>
+                                <TableColumn fx:id="tabletarih" prefWidth="98.4000244140625"
+                                             style="-fx-background-color: #5D88C6;" text="Başlama Tarihi"/>
+                                <TableColumn fx:id="tabletalep" prefWidth="107.20001220703125"
+                                             style="-fx-background-color: #0565B3;" text="Talep"/>
+                                <TableColumn fx:id="tablekayıt" prefWidth="77.5999755859375"
+                                             style="-fx-background-color: #5D88C6;" text="Kayıt Tipi"/>
+                                <TableColumn fx:id="tableucret" prefWidth="75.0" style="-fx-background-color: #0565B3;"
+                                             text="Ücret"/>
+                            </columns>
+                            <opaqueInsets>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                            </opaqueInsets>
+                            <cursor>
+                                <Cursor fx:constant="MOVE"/>
+                            </cursor>
+                        </TableView>
+                        <VBox layoutX="265.0" layoutY="14.0" prefHeight="114.0" prefWidth="410.0"
+                              style="-fx-min-height: 100; -fx-min-width: 100;">
+                            <children>
+                                <TextField fx:id="mad" promptText="Müşteri Ad"
+                                           style="-fx-padding: 10 10 10 10; -fx-margin: 10 10 100 10; -fx-background-color: #D3D3D3; -fx-text-inner-color: white;">
+                                    <font>
+                                        <Font name="Arial" size="16.0"/>
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0"/>
+                                    </VBox.margin>
+                                </TextField>
+                                <TextField fx:id="msoyad" promptText="Müşteri Soyad"
+                                           style="-fx-padding: 10 10 10 10; -fx-text-inner-color: white; -fx-background-color: #D3D3D3;">
+                                    <font>
+                                        <Font name="Arial" size="16.0"/>
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0"/>
+                                    </VBox.margin>
+                                </TextField>
+                                <ComboBox fx:id="makayıt" prefHeight="26.0" prefWidth="411.0" promptText="Kayıt Tipi"
+                                          style="-fx-background-color: #D3D3D3; -fx-text-inner-color: white;">
+                                    <padding>
+                                        <Insets bottom="4.0" top="3.0"/>
+                                    </padding>
+                                </ComboBox>
+                            </children>
+                            <opaqueInsets>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                            </opaqueInsets>
+                        </VBox>
+                        <Button fx:id="tablebtn" layoutX="595.0" layoutY="171.0" mnemonicParsing="false"
+                                prefHeight="30.0" prefWidth="79.0"
+                                style="-fx-background-color: #007BFF; -fx-background-radius: 50;" text="Listele">
+                            <font>
+                                <Font name="Arial Bold" size="13.0"/>
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="DEFAULT"/>
+                            </cursor>
+                        </Button>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab text="Müşteri Kayıt">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <ImageView fitHeight="673.0" fitWidth="944.0" opacity="0.7" pickOnBounds="true"
+                                   preserveRatio="true">
+                            <image>
+                                <Image url="@img/back.jpg"/>
+                            </image>
+                        </ImageView>
+                        <VBox layoutX="215.0" layoutY="150.0" prefHeight="263.0" prefWidth="410.0"
+                              style="-fx-min-height: 100; -fx-min-width: 100;">
+                            <children>
+                                <TextField fx:id="mkad" promptText="Ad"
+                                           style="-fx-padding: 10 10 10 10; -fx-margin: 10 10 100 10; -fx-prompt-text-fill: black;">
+                                    <VBox.margin>
+                                        <Insets bottom="5.0"/>
+                                    </VBox.margin>
+                                </TextField>
+                                <TextField fx:id="mksoyad" promptText="Soyad"
+                                           style="-fx-padding: 10 10 10 10; -fx-prompt-text-fill: black;">
+                                    <VBox.margin>
+                                        <Insets bottom="5.0"/>
+                                    </VBox.margin>
+                                </TextField>
+                                <TextField fx:id="mktel" promptText="Telefon"
+                                           style="-fx-padding: 10 10 10 10; -fx-margin: 10 10 100 10; -fx-prompt-text-fill: black;">
+                                    <VBox.margin>
+                                        <Insets bottom="5.0"/>
+                                    </VBox.margin>
+                                </TextField>
+                                <TextField fx:id="mktalep" promptText="Talep"
+                                           style="-fx-padding: 10 10 10 10; -fx-margin: 10 10 100 10; -fx-prompt-text-fill: black;">
+                                    <VBox.margin>
+                                        <Insets bottom="5.0"/>
+                                    </VBox.margin>
+                                </TextField>
+                                <TextField fx:id="mkucret" promptText="Ücret"
+                                           style="-fx-padding: 10 10 10 10; -fx-margin: 10 10 100 10; -fx-prompt-text-fill: black;">
+                                    <VBox.margin>
+                                        <Insets bottom="5.0"/>
+                                    </VBox.margin>
+                                </TextField>
+                                <ComboBox fx:id="mkkayıt" prefHeight="26.0" prefWidth="411.0" promptText="Kayıt Tipi"
+                                          style="-fx-background-color: white;">
+                                    <padding>
+                                        <Insets bottom="4.0" top="3.0"/>
+                                    </padding>
+                                    <VBox.margin>
+                                        <Insets bottom="5.0"/>
+                                    </VBox.margin>
+                                </ComboBox>
+                                <DatePicker fx:id="mktarih" prefHeight="26.0" prefWidth="419.0"
+                                            promptText="Başlama Tarihi"
+                                            style="-fx-background-color: white; -fx-prompt-text-fill: black;">
+                                    <padding>
+                                        <Insets bottom="5.0" top="5.0"/>
+                                    </padding>
+                                    <VBox.margin>
+                                        <Insets bottom="5.0"/>
+                                    </VBox.margin>
+                                </DatePicker>
+                            </children>
+                            <opaqueInsets>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                            </opaqueInsets>
+                        </VBox>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="214.0" layoutY="87.0"
+                               prefHeight="34.0" prefWidth="411.0" text="Müşteri Kayıt Sayfası" textAlignment="CENTER"
+                               textFill="#000000b0" textOverrun="CENTER_ELLIPSIS">
+                            <opaqueInsets>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                            </opaqueInsets>
+                            <font>
+                                <Font name="Arial Bold" size="29.0"/>
+                            </font>
+                        </Label>
+                        <Button fx:id="mkkaydet" layoutX="215.0" layoutY="448.0" mnemonicParsing="false"
+                                prefHeight="30.0" prefWidth="412.0"
+                                style="-fx-background-color: #007BFF; -fx-background-radius: 50;" text="Kaydet">
+                            <font>
+                                <Font name="Arial Bold" size="16.0"/>
+                            </font>
+                        </Button>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab text="Müşteri Güncelle">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <ImageView fitHeight="673.0" fitWidth="944.0" opacity="0.7" pickOnBounds="true"
+                                   preserveRatio="true">
+                            <image>
+                                <Image url="@img/back.jpg"/>
+                            </image>
+                        </ImageView>
+                        <VBox layoutX="215.0" layoutY="150.0" prefHeight="263.0" prefWidth="410.0"
+                              style="-fx-min-height: 100; -fx-min-width: 100;">
+                            <children>
+                                <TextField fx:id="mgid" promptText="ID"
+                                           style="-fx-padding: 10 10 10 10; -fx-margin: 10 10 100 10; -fx-prompt-text-fill: black;">
+                                    <VBox.margin>
+                                        <Insets bottom="5.0"/>
+                                    </VBox.margin>
+                                </TextField>
+                                <TextField fx:id="mgad" promptText="Ad"
+                                           style="-fx-padding: 10 10 10 10; -fx-margin: 10 10 100 10; -fx-prompt-text-fill: black;">
+                                    <VBox.margin>
+                                        <Insets bottom="5.0"/>
+                                    </VBox.margin>
+                                </TextField>
+                                <TextField fx:id="mgsoyad" promptText="Soyad"
+                                           style="-fx-padding: 10 10 10 10; -fx-prompt-text-fill: black;">
+                                    <VBox.margin>
+                                        <Insets bottom="5.0"/>
+                                    </VBox.margin>
+                                </TextField>
+                                <TextField fx:id="mgtel" promptText="Telefon"
+                                           style="-fx-padding: 10 10 10 10; -fx-margin: 10 10 100 10; -fx-prompt-text-fill: black;">
+                                    <VBox.margin>
+                                        <Insets bottom="5.0"/>
+                                    </VBox.margin>
+                                </TextField>
+                                <TextField fx:id="mgtalep" promptText="Talep"
+                                           style="-fx-padding: 10 10 10 10; -fx-margin: 10 10 100 10; -fx-prompt-text-fill: black;">
+                                    <VBox.margin>
+                                        <Insets bottom="5.0"/>
+                                    </VBox.margin>
+                                </TextField>
+                                <TextField fx:id="mgucret" promptText="Ücret"
+                                           style="-fx-padding: 10 10 10 10; -fx-margin: 10 10 100 10; -fx-prompt-text-fill: black;">
+                                    <VBox.margin>
+                                        <Insets bottom="5.0"/>
+                                    </VBox.margin>
+                                </TextField>
+                                <ComboBox fx:id="mgkayıt" prefHeight="26.0" prefWidth="411.0" promptText="Kayıt Tipi"
+                                          style="-fx-background-color: white;">
+                                    <padding>
+                                        <Insets bottom="4.0" top="3.0"/>
+                                    </padding>
+                                    <VBox.margin>
+                                        <Insets bottom="5.0"/>
+                                    </VBox.margin>
+                                </ComboBox>
+                                <DatePicker fx:id="mgtarih" prefHeight="26.0" prefWidth="419.0"
+                                            promptText="Başlama Tarihi"
+                                            style="-fx-background-color: white; -fx-prompt-text-fill: black;">
+                                    <padding>
+                                        <Insets bottom="5.0" top="5.0"/>
+                                    </padding>
+                                    <VBox.margin>
+                                        <Insets bottom="5.0"/>
+                                    </VBox.margin>
+                                </DatePicker>
+                            </children>
+                            <opaqueInsets>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                            </opaqueInsets>
+                        </VBox>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="214.0" layoutY="87.0"
+                               prefHeight="34.0" prefWidth="411.0" text="Müşteri Güncelleme Sayfası"
+                               textAlignment="CENTER" textFill="#000000b0" textOverrun="CENTER_ELLIPSIS">
+                            <opaqueInsets>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                            </opaqueInsets>
+                            <font>
+                                <Font name="Arial Bold" size="29.0"/>
+                            </font>
+                        </Label>
+                        <Button fx:id="mgbtn" layoutX="214.0" layoutY="507.0" mnemonicParsing="false" prefHeight="30.0"
+                                prefWidth="412.0" style="-fx-background-color: #007BFF; -fx-background-radius: 50;"
+                                text="Güncelle">
+                            <font>
+                                <Font name="Arial Bold" size="16.0"/>
+                            </font>
+                        </Button>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab text="Müşteri Sil">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <ImageView fitHeight="673.0" fitWidth="944.0" opacity="0.7" pickOnBounds="true"
+                                   preserveRatio="true">
+                            <image>
+                                <Image url="@img/back.jpg"/>
+                            </image>
+                        </ImageView>
+                        <TextField fx:id="silm" layoutX="284.0" layoutY="225.0" prefHeight="52.0" prefWidth="273.0">
+                            <font>
+                                <Font name="Arial" size="16.0"/>
+                            </font>
+                        </TextField>
+                        <Label alignment="CENTER" layoutX="283.0" layoutY="152.0" lineSpacing="100.0" prefHeight="50.0"
+                               prefWidth="274.0" style="-fx-background-color: f2f2f2;"
+                               text="Silinecek müşterinin ID bilgisini giriniz.">
+                            <font>
+                                <Font name="Arial" size="14.0"/>
+                            </font>
+                        </Label>
+                        <Label fx:id="siladm" layoutX="284.0" layoutY="346.0" prefHeight="29.0" prefWidth="270.0">
+                            <padding>
+                                <Insets bottom="2.0" left="5.0" right="2.0" top="2.0"/>
+                            </padding>
+                            <font>
+                                <Font name="Arial" size="15.0"/>
+                            </font>
+                        </Label>
+                        <Label fx:id="silsoyadm" layoutX="284.0" layoutY="383.0" prefHeight="29.0" prefWidth="270.0">
+                            <padding>
+                                <Insets bottom="2.0" left="5.0" right="2.0" top="2.0"/>
+                            </padding>
+                            <font>
+                                <Font name="Arial" size="15.0"/>
+                            </font>
+                        </Label>
+                        <Button fx:id="silmbtn" layoutX="460.0" layoutY="486.0" mnemonicParsing="false"
+                                prefHeight="30.0" prefWidth="97.0"
+                                style="-fx-background-color: #DC3545; -fx-background-radius: 50;" text="Sil">
+                            <font>
+                                <Font name="Arial Bold" size="15.0"/>
+                            </font>
+                        </Button>
+                        <Button fx:id="kontrolm" layoutX="284.0" layoutY="486.0" mnemonicParsing="false"
+                                prefHeight="30.0" prefWidth="97.0"
+                                style="-fx-background-color: #007BFF; -fx-background-radius: 50;" text="Kontrol Et">
+                            <font>
+                                <Font name="Arial Bold" size="15.0"/>
+                            </font>
+                        </Button>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab text="Salon Giderleri">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <ImageView fitHeight="673.0" fitWidth="944.0" opacity="0.7" pickOnBounds="true"
+                                   preserveRatio="true">
+                            <image>
+                                <Image url="@img/back.jpg"/>
+                            </image>
+                        </ImageView>
+                        <VBox layoutX="32.0" layoutY="74.0" prefHeight="432.0" prefWidth="292.0">
+                            <children>
+                                <Label prefHeight="22.0" prefWidth="295.0" style="-fx-background-color: #F77B74;"
+                                       text="Mevcut Ayın Mali Durum Özeti">
+                                    <VBox.margin>
+                                        <Insets bottom="10.0"/>
+                                    </VBox.margin>
+                                    <font>
+                                        <Font name="Arial Bold" size="19.0"/>
+                                    </font>
+                                    <padding>
+                                        <Insets left="10.0"/>
+                                    </padding>
+                                </Label>
+                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                    <children>
+                                        <Label prefHeight="26.0" prefWidth="112.0" style="-fx-background-color: gray;"
+                                               text="Elektrik Faturası" textAlignment="CENTER">
+                                            <font>
+                                                <Font name="Arial Bold" size="12.0"/>
+                                            </font>
+                                            <HBox.margin>
+                                                <Insets right="10.0"/>
+                                            </HBox.margin>
+                                            <padding>
+                                                <Insets left="4.0"/>
+                                            </padding>
+                                        </Label>
+                                        <TextField fx:id="elektrik" promptText="Elektrik Faturası"/>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets left="10.0"/>
+                                    </VBox.margin>
+                                </HBox>
+                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                    <children>
+                                        <Label prefHeight="26.0" prefWidth="112.0" style="-fx-background-color: gray;"
+                                               text="Doğalgaz Faturası" textAlignment="CENTER">
+                                            <font>
+                                                <Font name="Arial Bold" size="12.0"/>
+                                            </font>
+                                            <HBox.margin>
+                                                <Insets right="10.0"/>
+                                            </HBox.margin>
+                                            <padding>
+                                                <Insets left="4.0"/>
+                                            </padding>
+                                        </Label>
+                                        <TextField fx:id="gaz" promptText="Doğalgaz Faturası"/>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets left="10.0"/>
+                                    </VBox.margin>
+                                </HBox>
+                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                    <children>
+                                        <Label prefHeight="26.0" prefWidth="112.0"
+                                               style="-fx-background-color: gray; -fx-border-radius: 100;"
+                                               text="Su Faturası">
+                                            <font>
+                                                <Font name="Arial Bold" size="12.0"/>
+                                            </font>
+                                            <HBox.margin>
+                                                <Insets right="10.0"/>
+                                            </HBox.margin>
+                                            <padding>
+                                                <Insets left="4.0"/>
+                                            </padding>
+                                        </Label>
+                                        <TextField fx:id="su" promptText="Su Faturası"/>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets left="10.0"/>
+                                    </VBox.margin>
+                                </HBox>
+                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                    <children>
+                                        <Label prefHeight="26.0" prefWidth="112.0" style="-fx-background-color: gray;"
+                                               text="Kira">
+                                            <font>
+                                                <Font name="Arial Bold" size="12.0"/>
+                                            </font>
+                                            <HBox.margin>
+                                                <Insets right="10.0"/>
+                                            </HBox.margin>
+                                            <padding>
+                                                <Insets left="4.0"/>
+                                            </padding>
+                                        </Label>
+                                        <TextField fx:id="kira" promptText="Kira"/>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets left="10.0"/>
+                                    </VBox.margin>
+                                </HBox>
+                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                    <children>
+                                        <Label prefHeight="26.0" prefWidth="112.0" style="-fx-background-color: gray;"
+                                               text="Diğer Giderler">
+                                            <font>
+                                                <Font name="Arial Bold" size="12.0"/>
+                                            </font>
+                                            <HBox.margin>
+                                                <Insets right="10.0"/>
+                                            </HBox.margin>
+                                            <padding>
+                                                <Insets left="4.0"/>
+                                            </padding>
+                                        </Label>
+                                        <TextField fx:id="diger" promptText="Diğer Giderler"/>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets left="10.0"/>
+                                    </VBox.margin>
+                                </HBox>
+                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                    <children>
+                                        <Label prefHeight="26.0" prefWidth="112.0" style="-fx-background-color: gray;"
+                                               text="Personel Maaşları">
+                                            <font>
+                                                <Font name="Arial Bold" size="12.0"/>
+                                            </font>
+                                            <HBox.margin>
+                                                <Insets right="10.0"/>
+                                            </HBox.margin>
+                                            <padding>
+                                                <Insets left="4.0"/>
+                                            </padding>
+                                        </Label>
+                                        <TextField fx:id="maas" disable="true" promptText="Personel Maaşları"/>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets left="10.0"/>
+                                    </VBox.margin>
+                                </HBox>
+                                <Button fx:id="hesapla" mnemonicParsing="false" prefHeight="26.0" prefWidth="303.0"
+                                        style="-fx-background-color: #007BFF; -fx-background-radius: 50;"
+                                        text="HESAPLA">
+                                    <VBox.margin>
+                                        <Insets bottom="15.0" left="10.0" right="10.0"/>
+                                    </VBox.margin>
+                                    <font>
+                                        <Font name="Arial Bold" size="13.0"/>
+                                    </font>
+                                </Button>
+                                <TextArea fx:id="yaz" prefHeight="184.0" prefWidth="292.0">
+                                    <font>
+                                        <Font name="Arial Bold" size="15.0"/>
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="5.0" top="15.0"/>
+                                    </padding>
+                                    <VBox.margin>
+                                        <Insets/>
+                                    </VBox.margin>
+                                </TextArea>
+                            </children>
+                        </VBox>
+                        <PieChart fx:id="grafik" labelLineLength="40.0" layoutX="341.0" layoutY="74.0"
+                                  style="-fx-fill: red;"/>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+    </tabs>
+</TabPane>
